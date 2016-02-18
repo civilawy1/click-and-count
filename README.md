@@ -2,7 +2,7 @@
 
 Free PHP script to track how many times a given link has been clicked.
 
-Edit `data.txt` to configure which links to track. The first item is the link's ID, followed by the URL and the initial counter with a value of 0 (zero). The rest of the script's files should be good to go. You'll need to change your existing link(s) before you can count any clicks.
+Edit `data.txt` to configure which links to track. The first item is the link's ID, followed by the URL and the initial counter with a value of `0` (zero). The rest of the script's files should be good to go. You'll need to change your existing link(s) before you can count any clicks.
 
 **Example**
 
