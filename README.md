@@ -6,8 +6,6 @@ Edit `data.txt` to configure which links to track. The first item is the link's 
 
 **Example**
 
-A line in `data.txt` containing `exam|http://www.example,com|0` would track how many times your users click on a link to `www.example.com` using `exam` as the link's ID. Assuming the script is located in `/cac/`, you would change the existing link from `a href=http://www.example.com` to `a href=/cac?id=exam`. That's all there is to it. Happy click and counting.
-
-You can view a summary by pointing your browser to `stats.php` to view a summary.
+A line in `data.txt` containing `exam|http://www.example,com|0` would track how many times your users click on a link to `www.example.com` using `exam` as the link's ID. Assuming the script is located in `/cac/`, you would change the existing link from `a href=http://www.example.com` to `a href=/cac?id=exam`. That's all there is to it. Happy click and counting. Point your browser to `stats.php` to view a summary.
 
 [Script homepage](http://phclaus.eu.org/php-scripts/click-and-count/)
