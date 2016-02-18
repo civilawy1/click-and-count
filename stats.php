@@ -88,8 +88,10 @@
     <h1>Count And Click Statistics</h1>
     <p class="cac_dat"><span class="cac_id">ID</span> <span class="cac_url">URL</span> <span class="cac_cnt">Count</span></p>
 <?php
+//** load config
 include ('./conf.php');
 
+//** parse data file and print listing
 foreach ($cac_ln as $cac_lnd) {
   $cac_lim = explode("|", $cac_lnd);
   $cac_id  = $cac_lim[0];
