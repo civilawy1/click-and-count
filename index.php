@@ -1,6 +1,8 @@
 <?php
+//** load config
 include ('./conf.php');
 
+// parse data file and update counter
 foreach ($cac_ln as $cac_lnd) {
   $cac_lim = explode('|', $cac_lnd);
   $cac_id  = $cac_lim[0];
@@ -17,6 +19,7 @@ foreach ($cac_ln as $cac_lnd) {
   $cac_new .= "\n";
 }
 
+//** save counter and load URL
 file_put_contents($cac_dat, trim($cac_new));
 header('Location: ' . $cac_ref[1]);
 exit;
