@@ -98,11 +98,7 @@ foreach ($cac_ln as $cac_lnd) {
   $cac_url = $cac_lim[1];
   $cac_cnt = $cac_lim[2];
   $cac_ref = $cac_lim;
-  echo '    <div class="cac_dat">' . 
-       '<span class="cac_id">' . $cac_id . '</span> ' . 
-       '<span class="cac_url">' . $cac_url . '</span> ' . 
-       '<span class="cac_cnt">' . $cac_cnt . '</span>' . 
-       "</div>\n";
+  echo '    <div class="cac_dat"><span class="cac_id">' . $cac_id . '</span> <span class="cac_url">' . $cac_url . '</span> <span class="cac_cnt">' . $cac_cnt . '</span></div>' . "\n";
 }
 ?>
     <p id="cac_by"><a href="http://phclaus.eu.org/php-scripts/click-and-count/" title="Get a free copy of this script">Powered by Click And Count v<?php echo $cac_ver; ?></a></p>
