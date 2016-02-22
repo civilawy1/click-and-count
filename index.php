@@ -9,6 +9,7 @@ foreach ($cac_ln as $cac_lnd) {
   $cac_url = $cac_lim[1];
   $cac_cnt = $cac_lim[2];
 
+  //** check ID
   if ($_REQUEST['id'] == $cac_id) {
     $cac_ref = $cac_lim;
     $cac_new .= $cac_id . '|' . $cac_url . '|' . ((int) $cac_cnt + 1);
