@@ -1,1 +1,1 @@
-demo|http://phclaus.eu.org/php-scripts/click-and-count/demo/demo.php|0
+demo|http://phclaus.eu.org/php-scripts/click-and-count/|0
