@@ -1,8 +1,17 @@
 <?php
+/* Click And Count
+ * 
+ * This script counts how many clicks a given link gets, stores the
+ * value in a flat ASCII data file, and then silently redirects to
+ * the URL of the link.
+ * 
+ * phclaus.eu.org/php-scripts/click-and-count
+ */
+
 //** load config
 include ('./conf.php');
 
-// parse data file and update counter
+//** parse data file
 foreach ($cac_ln as $cac_lnd) {
   $cac_lim = explode('|', $cac_lnd);
   $cac_id  = $cac_lim[0];
@@ -20,7 +29,7 @@ foreach ($cac_ln as $cac_lnd) {
   $cac_new .= "\n";
 }
 
-//** save counter and load URL
+//** update counter and load URL
 file_put_contents($cac_dat, trim($cac_new));
 header('Location: ' . $cac_ref[1]);
 exit;
