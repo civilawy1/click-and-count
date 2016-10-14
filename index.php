@@ -5,7 +5,7 @@
  * value in a flat ASCII data file, and then silently redirects to
  * the URL of the link.
  * 
- * phclaus.eu.org/php-scripts/click-and-count
+ * phclaus.com/php-scripts/click-and-count
  */
 
 //** load config
