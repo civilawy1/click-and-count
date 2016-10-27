@@ -1,19 +1,14 @@
 <?php
 /* Click And Count Admin
  *
- * Provides admin interface to
- *
- * - list summary of statistics
- * - editing of statistics
- * - adding new items
+ * - list stats
+ * - edit stats
+ * - add, remove item
  */
 
 
 //** load config
 include ('./conf.php');
-
-//** link post location
-$cac_post = 'Location: http://' . $_SERVER['HTTP_HOST'] . "$cac_dir$cac_adi?$cac_key";
 
 //** check access key
 if ($_SERVER['QUERY_STRING'] != $cac_key) {
@@ -24,7 +19,7 @@ if ($_SERVER['QUERY_STRING'] != $cac_key) {
 //** update data file
 if (isset ($_POST['cac_edit_post'])) {
   file_put_contents($cac_dat, $_POST['cac_edit_data']);
-  header($cac_post);
+  header('Location: ?'. $cac_key);
   exit;
 }
 
@@ -39,7 +34,7 @@ if (isset ($_POST['cac_add_post'])) {
     //** save new item
     $cac_add_new = "\n" . $cac_add_id . '|' . $cac_add_url . '|0';
     file_put_contents($cac_dat, $cac_add_new, FILE_APPEND);
-    header($cac_post);
+    header('Location: ?'. $cac_key);
     exit;
   }
 }
@@ -50,28 +45,28 @@ if (isset ($_POST['cac_add_post'])) {
     <title>Click And Count Admin - <?php echo $_SERVER['HTTP_HOST']; ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style type="text/css">
-    body {
-      font-size: 85%;
+    h1 {
+      font-size: 125%;
     }
 
     textarea {
+      font-size: 95%;
       border: 1px solid #ccc;
       margin: 16px auto;
       padding: 2px;
-      width: 95%;
+      width: 100%;
     }
     </style>
   </head>
   <body>
-    <h1>Click And Count Admin</h1>
+    <h1>Click And Count Admin - <?php echo $_SERVER['HTTP_HOST']; ?></h1>
+    <p>Type to edit the current stats to modify or remove existing items. Press the <kbd>Update</kbd> button to save changes. New items will be appended at the bottom of the list.</p>
     <form action="" method="POST">
       <div>
-        <strong>Data summary</strong> (type to edit) 
         <input type="submit" name="cac_edit_post" value="Update" title="Update data file">
       </div>
-      <textarea cols="80" rows="20" name="cac_edit_data" title="Data summary. Type to edit.">
+      <textarea cols="80" rows="20" name="cac_edit_data" title="Type to edit.">
 <?php echo file_get_contents($cac_dat); ?></textarea>
-      <div><strong>Add new item</strong> (appended at bottom)</div>
       <div>
         ID <input name="cac_add_id" title="Enter new ID">
         URL <input name="cac_add_url" title="Enter new URL">
