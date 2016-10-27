@@ -18,10 +18,11 @@ foreach ($cac_ln as $cac_lnd) {
   $cac_url = $cac_lim[1];
   $cac_cnt = $cac_lim[2];
 
-  //** check ID
+  //** check ID and process item
   if ($_REQUEST['id'] == $cac_id) {
     $cac_ref  = $cac_lim;
-    $cac_new .= $cac_id . '|' . $cac_url . '|' . ((int) $cac_cnt + 1);
+    $cac_cnt  = ($cac_lim[2] + 1);
+    $cac_new .= $cac_id . '|' . $cac_url . '|' . $cac_cnt;
   } else {
     $cac_new .= $cac_lnd;
   }
@@ -30,6 +31,8 @@ foreach ($cac_ln as $cac_lnd) {
 }
 
 //** update counter
-file_put_contents($cac_pub . $cac_dir . $cac_dat, trim($cac_new));
+file_put_contents($cac_dat, trim($cac_new));
+
+//** open location and exit
 header('Location: ' . $cac_ref[1]);
 exit;
