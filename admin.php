@@ -51,27 +51,26 @@ if (isset ($_POST['cac_add_post'])) {
 
     textarea {
       font-size: 95%;
-      border: 1px solid #ccc;
-      margin: 16px auto;
-      padding: 2px;
       width: 100%;
+      height: 30.000em;
     }
     </style>
   </head>
   <body>
     <h1>Click And Count Admin - <?php echo $_SERVER['HTTP_HOST']; ?></h1>
-    <p>Type to edit the current stats to modify or remove existing items. Press the <kbd>Update</kbd> button to save changes. New items will be appended at the bottom of the list.</p>
-    <form action="" method="POST">
-      <div>
-        <input type="submit" name="cac_edit_post" value="Update" title="Update data file">
-      </div>
-      <textarea cols="80" rows="20" name="cac_edit_data" title="Type to edit.">
+    <p>Type to edit or remove existing items. Press <kbd>Update</kbd> to save changes.</p>
+    <form action="#" method="POST" accept-charset="UTF-8">
+      <p>
+        <input type="submit" name="cac_edit_post" value="Update" title="Click here to update the data file">
+      </p>
+      <textarea cols="80" rows="25" name="cac_edit_data" title="Type here to edit or remove items">
 <?php echo file_get_contents($cac_dat); ?></textarea>
-      <div>
-        ID <input name="cac_add_id" title="Enter new ID">
-        URL <input name="cac_add_url" title="Enter new URL">
-        <input type="submit" name="cac_add_post" value="Add" title="Add new entry">
-      </div>
+      <p>New items are appended at the bottom of the list.</p>
+      <p>
+        ID <input name="cac_add_id" title="Enter new item ID">
+        URL <input name="cac_add_url" title="Enter new item URL">
+        <input type="submit" name="cac_add_post" value="Add" title="Click here to add a new item">
+      </p>
     </form>
   </body>
 </html>
